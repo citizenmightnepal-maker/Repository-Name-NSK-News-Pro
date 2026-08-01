@@ -385,3 +385,17 @@ color:#f57c00;
 }
 
 }
+<div class="search-box">
+
+    <input
+        type="search"
+        placeholder="समाचार खोज्नुहोस्..."
+    >
+
+    <div class="search-clear">✕</div>
+
+    <div class="search-btn">🔍</div>
+
+    <div class="search-results"></div>
+
+</div>
