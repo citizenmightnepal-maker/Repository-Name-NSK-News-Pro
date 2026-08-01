@@ -179,7 +179,75 @@ transform:translateX(-100%);
 /* ==========================
    FEATURED STRIP
 ========================== */
+.breaking{
 
+background:#fff;
+
+margin:25px 0;
+
+border-radius:10px;
+
+overflow:hidden;
+
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+}
+
+.breaking .container{
+
+display:flex;
+
+padding:0;
+
+}
+
+.breaking-label{
+
+background:#d32f2f;
+
+color:#fff;
+
+padding:16px 22px;
+
+font-weight:700;
+
+white-space:nowrap;
+
+}
+
+.breaking-news{
+
+display:flex;
+
+align-items:center;
+
+gap:50px;
+
+overflow:hidden;
+
+white-space:nowrap;
+
+padding:0 20px;
+
+scroll-behavior:smooth;
+
+}
+
+.breaking-news a{
+
+font-weight:600;
+
+color:#222;
+
+transition:.3s;
+
+}
+
+.breaking-news a:hover{
+
+color:#f57c00;
+
+}
 .featured-strip{
     margin-top:35px;
     display:grid;
