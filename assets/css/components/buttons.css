@@ -1,0 +1,294 @@
+/* ======================================================
+   NSK NEWS PRO
+   BUTTONS COMPONENT
+====================================================== */
+
+/* ==========================
+   BASE BUTTON
+========================== */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 28px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:700;
+    text-decoration:none;
+    transition:all .3s ease;
+}
+
+/* ==========================
+   PRIMARY
+========================== */
+
+.btn-primary{
+    background:#f57c00;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:#d96d00;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(245,124,0,.35);
+}
+
+/* ==========================
+   SECONDARY
+========================== */
+
+.btn-secondary{
+    background:#1e293b;
+    color:#fff;
+}
+
+.btn-secondary:hover{
+    background:#0f172a;
+}
+
+/* ==========================
+   OUTLINE
+========================== */
+
+.btn-outline{
+    background:transparent;
+    color:#f57c00;
+    border:2px solid #f57c00;
+}
+
+.btn-outline:hover{
+    background:#f57c00;
+    color:#fff;
+}
+
+/* ==========================
+   LIGHT
+========================== */
+
+.btn-light{
+    background:#f5f5f5;
+    color:#222;
+}
+
+.btn-light:hover{
+    background:#ececec;
+}
+
+/* ==========================
+   ICON BUTTON
+========================== */
+
+.btn-icon{
+    width:46px;
+    height:46px;
+    padding:0;
+    border-radius:50%;
+}
+
+/* ==========================
+   SOCIAL BUTTONS
+========================== */
+
+.btn-facebook{
+    background:#1877F2;
+    color:#fff;
+}
+
+.btn-twitter{
+    background:#000;
+    color:#fff;
+}
+
+.btn-youtube{
+    background:#FF0000;
+    color:#fff;
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:#fff;
+}
+
+/* ==========================
+   BACK TO TOP
+========================== */
+
+.back-top{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:52px;
+
+height:52px;
+
+border-radius:50%;
+
+background:#f57c00;
+
+color:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:20px;
+
+cursor:pointer;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.back-top.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.back-top:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* ==========================
+   PAGINATION
+========================== */
+
+.pagination{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+margin:50px 0;
+
+}
+
+.pagination a{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#fff;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.pagination a:hover,
+
+.pagination .active{
+
+background:#f57c00;
+
+color:#fff;
+
+border-color:#f57c00;
+
+}
+
+/* ==========================
+   TAG BUTTON
+========================== */
+
+.tag-btn{
+
+display:inline-block;
+
+padding:8px 16px;
+
+background:#f4f4f4;
+
+border-radius:30px;
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+.tag-btn:hover{
+
+background:#f57c00;
+
+color:#fff;
+
+}
+
+/* ==========================
+   RIPPLE EFFECT
+========================== */
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::after{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:0;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.45s;
+
+}
+
+.btn:active::after{
+
+width:260px;
+
+height:260px;
+
+}
