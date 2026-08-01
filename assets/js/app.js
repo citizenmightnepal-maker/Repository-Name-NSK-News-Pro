@@ -1,23 +1,36 @@
-/* ===================================================
-   NSK NEWS PRO
-   app.js v1.0
-=================================================== */
+/*
+=========================================
+NSK NEWS PRO
+Core App
+=========================================
+*/
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    /* ==========================
-       Sticky Header
-    ========================== */
+    initStickyHeader();
+    initBackToTop();
+    initReadingProgress();
+    initRevealAnimation();
 
-    const header = document.querySelector(".navbar");
+});
 
-    window.addEventListener("scroll", () => {
+/* ==========================
+   Sticky Header
+========================== */
 
-        if (window.scrollY > 120) {
+function initStickyHeader(){
+
+    const header=document.querySelector(".header");
+
+    if(!header) return;
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>80){
 
             header.classList.add("sticky");
 
-        } else {
+        }else{
 
             header.classList.remove("sticky");
 
@@ -25,145 +38,98 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+}
 
-    /* ==========================
-       Back To Top
-    ========================== */
+/* ==========================
+   Back To Top
+========================== */
 
-    const backTop = document.querySelector(".back-top");
+function initBackToTop(){
 
-    if (backTop) {
+    const btn=document.querySelector(".back-top");
 
-        window.addEventListener("scroll", () => {
+    if(!btn) return;
 
-            if (window.scrollY > 500) {
+    window.addEventListener("scroll",()=>{
 
-                backTop.classList.add("show");
+        if(window.scrollY>400){
 
-            } else {
+            btn.classList.add("show");
 
-                backTop.classList.remove("show");
+        }else{
 
-            }
+            btn.classList.remove("show");
 
-        });
+        }
 
-        backTop.addEventListener("click", () => {
+    });
 
-            window.scrollTo({
+    btn.addEventListener("click",()=>{
 
-                top: 0,
+        window.scrollTo({
 
-                behavior: "smooth"
+            top:0,
 
-            });
-
-        });
-
-    }
-
-
-    /* ==========================
-       Reading Progress
-    ========================== */
-
-    const progress = document.querySelector(".reading-progress");
-
-    if (progress) {
-
-        window.addEventListener("scroll", () => {
-
-            let scrollTop = document.documentElement.scrollTop;
-
-            let height = document.documentElement.scrollHeight -
-
-                document.documentElement.clientHeight;
-
-            let percent = (scrollTop / height) * 100;
-
-            progress.style.width = percent + "%";
-
-        });
-
-    }
-
-
-    /* ==========================
-       Dark Mode
-    ========================== */
-
-    const darkBtn = document.querySelector(".dark-toggle");
-
-    if (darkBtn) {
-
-        darkBtn.addEventListener("click", () => {
-
-            document.body.classList.toggle("dark");
-
-            localStorage.setItem(
-
-                "darkMode",
-
-                document.body.classList.contains("dark")
-
-            );
-
-        });
-
-    }
-
-    if (localStorage.getItem("darkMode") === "true") {
-
-        document.body.classList.add("dark");
-
-    }
-
-
-    /* ==========================
-       Mobile Menu
-    ========================== */
-
-    const menuBtn = document.querySelector(".menu-btn");
-
-    const nav = document.querySelector(".navbar ul");
-
-    if (menuBtn) {
-
-        menuBtn.addEventListener("click", () => {
-
-            nav.classList.toggle("active");
-
-        });
-
-    }
-
-
-    /* ==========================
-       Lazy Images
-    ========================== */
-
-    const images = document.querySelectorAll("img[data-src]");
-
-    const observer = new IntersectionObserver((entries, obs) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                const img = entry.target;
-
-                img.src = img.dataset.src;
-
-                img.removeAttribute("data-src");
-
-                obs.unobserve(img);
-
-            }
+            behavior:"smooth"
 
         });
 
     });
 
-    images.forEach(img => observer.observe(img));
+}
 
-});
+/* ==========================
+   Reading Progress
+========================== */
+
+function initReadingProgress(){
+
+    const progress=document.querySelector(".reading-progress");
+
+    if(!progress) return;
+
+    window.addEventListener("scroll",()=>{
+
+        const total=document.documentElement.scrollHeight-window.innerHeight;
+
+        const current=window.scrollY;
+
+        const width=(current/total)*100;
+
+        progress.style.width=width+"%";
+
+    });
+
+}
+
+/* ==========================
+   Scroll Reveal
+========================== */
+
+function initRevealAnimation(){
+
+    const items=document.querySelectorAll(".reveal");
+
+    if(items.length===0) return;
+
+    const observer=new IntersectionObserver(entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+
+            }
+
+        });
+
+    },{
+
+        threshold:.15
+
+    });
+
+    items.forEach(item=>observer.observe(item));
+
+}
