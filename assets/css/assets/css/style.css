@@ -1,39 +1,93 @@
-/* ===========================================
-   NSK NEWS PRO v1.0
-   100% Original Blogger Theme
+/* =====================================
+   HERO SLIDER
+===================================== */
 
-   Author : Citizen Might Nepal
-   Version: 1.0
+.hero-slider{
 
-=========================================== */
+position:relative;
 
-:root{
-
---primary:#F57C00;
---secondary:#0F4C81;
---danger:#D32F2F;
-
---background:#F8F9FA;
---surface:#FFFFFF;
-
---text:#222222;
---muted:#666666;
-
---radius:12px;
+overflow:hidden;
 
 }
-assets/js/app.js
 
-assets/js/search.js
+.hero-slide{
 
-assets/js/slider.js
+display:none;
 
-assets/css/mobile.css
+animation:fade .6s ease;
 
-assets/css/dark.css
+}
 
-template/homepage.html
+.hero-slide.active{
 
-template/article.html
+display:block;
 
-blogger/theme.xml
+}
+
+.slider-prev,
+.slider-next{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:48px;
+
+height:48px;
+
+background:rgba(0,0,0,.55);
+
+color:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+border-radius:50%;
+
+z-index:99;
+
+transition:.3s;
+
+}
+
+.slider-prev{
+
+left:20px;
+
+}
+
+.slider-next{
+
+right:20px;
+
+}
+
+.slider-prev:hover,
+.slider-next:hover{
+
+background:var(--primary);
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:.3;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
