@@ -1,0 +1,39 @@
+/* ===========================================
+   NSK NEWS PRO v1.0
+   100% Original Blogger Theme
+
+   Author : Citizen Might Nepal
+   Version: 1.0
+
+=========================================== */
+
+:root{
+
+--primary:#F57C00;
+--secondary:#0F4C81;
+--danger:#D32F2F;
+
+--background:#F8F9FA;
+--surface:#FFFFFF;
+
+--text:#222222;
+--muted:#666666;
+
+--radius:12px;
+
+}
+assets/js/app.js
+
+assets/js/search.js
+
+assets/js/slider.js
+
+assets/css/mobile.css
+
+assets/css/dark.css
+
+template/homepage.html
+
+template/article.html
+
+blogger/theme.xml
