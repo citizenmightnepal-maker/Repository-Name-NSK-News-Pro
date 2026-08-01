@@ -1,0 +1,351 @@
+/* ======================================================
+   NSK NEWS PRO
+   ANIMATIONS
+====================================================== */
+
+/* ========= TRANSITION ========= */
+
+.transition{
+    transition:all .3s ease;
+}
+
+/* ========= FADE ========= */
+
+.fade-in{
+    animation:fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+/* ========= SLIDE UP ========= */
+
+.slide-up{
+    animation:slideUp .7s ease forwards;
+}
+
+@keyframes slideUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ========= SLIDE LEFT ========= */
+
+.slide-left{
+
+animation:slideLeft .8s ease forwards;
+
+}
+
+@keyframes slideLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* ========= SLIDE RIGHT ========= */
+
+.slide-right{
+
+animation:slideRight .8s ease forwards;
+
+}
+
+@keyframes slideRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(-50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* ========= ZOOM ========= */
+
+.zoom-in{
+
+animation:zoomIn .6s ease forwards;
+
+}
+
+@keyframes zoomIn{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ========= BOUNCE ========= */
+
+.bounce:hover{
+
+animation:bounce .5s;
+
+}
+
+@keyframes bounce{
+
+25%{
+transform:translateY(-6px);
+}
+
+50%{
+transform:translateY(0);
+}
+
+75%{
+transform:translateY(-3px);
+}
+
+}
+
+/* ========= FLOAT ========= */
+
+.float:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* ========= ROTATE ========= */
+
+.rotate:hover{
+
+transform:rotate(3deg);
+
+}
+
+/* ========= SCALE ========= */
+
+.scale:hover{
+
+transform:scale(1.05);
+
+}
+
+/* ========= PULSE ========= */
+
+.pulse{
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:0 0 0 0 rgba(245,124,0,.45);
+
+}
+
+70%{
+
+box-shadow:0 0 0 16px rgba(245,124,0,0);
+
+}
+
+100%{
+
+box-shadow:0 0 0 0 rgba(245,124,0,0);
+
+}
+
+}
+
+/* ========= SPIN ========= */
+
+.spin{
+
+animation:spin 2s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ========= SHIMMER ========= */
+
+.skeleton{
+
+background:linear-gradient(
+90deg,
+#eeeeee 25%,
+#f8f8f8 50%,
+#eeeeee 75%
+);
+
+background-size:300% 100%;
+
+animation:shimmer 1.4s infinite;
+
+}
+
+@keyframes shimmer{
+
+0%{
+
+background-position:100%;
+
+}
+
+100%{
+
+background-position:-100%;
+
+}
+
+}
+
+/* ========= HOVER LIFT ========= */
+
+.hover-lift{
+
+transition:.3s;
+
+}
+
+.hover-lift:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+/* ========= IMAGE ZOOM ========= */
+
+.image-hover{
+
+overflow:hidden;
+
+}
+
+.image-hover img{
+
+transition:.5s;
+
+}
+
+.image-hover:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ========= BUTTON PRESS ========= */
+
+.btn:active{
+
+transform:scale(.96);
+
+}
+
+/* ========= LOADER ========= */
+
+.loader{
+
+width:42px;
+
+height:42px;
+
+border:4px solid #eee;
+
+border-top-color:#f57c00;
+
+border-radius:50%;
+
+animation:spin .8s linear infinite;
+
+margin:auto;
+
+}
+
+/* ========= SCROLL REVEAL ========= */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
