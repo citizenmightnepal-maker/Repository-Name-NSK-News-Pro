@@ -1909,3 +1909,22 @@ transition:.3s;
 color:#F57C00;
 
 }
+.reading-progress{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:#f57c00;
+
+z-index:999999;
+
+transition:width .15s linear;
+
+}
