@@ -1,1 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html
+    b:version="2"
+    class="v2"
+    expr:dir="data:blog.languageDirection"
+    expr:lang="data:blog.locale"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:b="http://www.google.com/2005/gml/b"
+    xmlns:data="http://www.google.com/2005/gml/data"
+    xmlns:expr="http://www.google.com/2005/gml/expr">
 
+<head>
+
+<meta charset="UTF-8"/>
+
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+
+<b:include data="blog" name="all-head-content"/>
+
+<title><data:blog.pageTitle/></title>
+
+<b:skin><![CDATA[
+
+/* NSK NEWS PRO */
+
+]]></b:skin>
+
+</head>
+
+<body>
+
+<div class="reading-progress"></div>
+
+<div class="topbar">
+
+<div class="container">
+
+<div class="topbar-left">
+
+<span>
+<data:blog.pageTitle/>
+</span>
+
+</div>
+
+<div class="topbar-right">
+
+<a expr:href='data:blog.homepageUrl'>
+गृहपृष्ठ
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<header class="header">
+
+<div class="container">
+
+<div class="logo">
+
+<b:section id='header' showaddelement='yes'>
+
+<b:widget
+id='Header1'
+type='Header'
+locked='true'
+title='Header'/>
+
+</b:section>
+
+</div>
+
+</div>
+
+</header>
+
+<nav class="navbar">
+
+<div class="container">
+
+<b:section id='menu' showaddelement='yes'/>
+
+</div>
+
+</nav>
+
+<main>
+
+<div class="container">
+
+<div class="content-wrap">
+
+<div class="content">
+
+<b:section
+id='main'
+showaddelement='yes'
+maxwidgets='1'>
+
+<b:widget
+id='Blog1'
+type='Blog'
+locked='true'/>
+
+</b:section>
+
+</div>
+
+<aside class="sidebar">
+
+<b:section
+id='sidebar'
+showaddelement='yes'/>
+
+</aside>
+
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<p>
+
+© <data:blog.title/>
+
+</p>
+
+</div>
+
+</footer>
+
+<script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'></script>
+
+</body>
+
+</html>
+<!-- =========================================================
+     NSK NEWS PRO
+     THEME.XML PART 2
+     POST LAYOUT
+========================================================= -->
+
+<b:includable id='post' var='post'>
+
+<article class='post-card'>
+
+  <b:if cond='data:post.firstImageUrl'>
+    <div class='post-thumb'>
+      <a expr:href='data:post.url'>
+        <img expr:src='data:post.firstImageUrl' expr:alt='data:post.title'/>
+      </a>
+    </div>
+  </b:if>
+
+  <div class='post-content'>
+
+    <!-- Labels -->
+    <b:if cond='data:post.labels'>
+      <div class='post-labels'>
+        <b:loop values='data:post.labels' var='label'>
+          <a expr:href='data:label.url'>
+            <data:label.name/>
+          </a>
+        </b:loop>
+      </div>
+    </b:if>
+
+    <!-- Title -->
+    <h2 class='post-title'>
+      <a expr:href='data:post.url'>
+        <data:post.title/>
+      </a>
+    </h2>
+
+    <!-- Meta -->
+    <div class='post-meta'>
+
+      <span class='author'>
+        <data:post.author/>
+      </span>
+
+      <span class='date'>
+        <data:post.dateHeader/>
+      </span>
+
+      <b:if cond='data:post.allowComments'>
+        <span class='comments'>
+          <data:post.numComments/> Comments
+        </span>
+      </b:if>
+
+    </div>
+
+    <!-- Snippet -->
+    <div class='post-summary'>
+      <data:post.snippet/>
+    </div>
+
+    <!-- Read More -->
+    <div class='read-more'>
+
+      <a expr:href='data:post.url'>
+
+        थप पढ्नुहोस् →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</article>
+
+</b:includable>
+
+<!-- =========================================================
+     POST LIST
+========================================================= -->
+
+<div class='news-grid'>
+
+<b:loop values='data:posts' var='post'>
+
+<b:include data='post' name='post'/>
+
+</b:loop>
+
+</div>
+
+<!-- =========================================================
+     PAGINATION
+========================================================= -->
+
+<b:include name='nextprev'/>
