@@ -1,0 +1,225 @@
+/* ======================================================
+   NSK NEWS PRO
+   FORMS COMPONENT
+====================================================== */
+
+/* ==========================
+   FORM GROUP
+========================== */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+/* ==========================
+   INPUT
+========================== */
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select{
+
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #dcdcdc;
+    border-radius:8px;
+    background:#fff;
+    font-size:15px;
+    transition:.3s;
+    outline:none;
+
+}
+
+textarea{
+    resize:vertical;
+    min-height:140px;
+}
+
+select{
+    cursor:pointer;
+}
+
+/* ==========================
+   FOCUS
+========================== */
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:#f57c00;
+    box-shadow:0 0 0 4px rgba(245,124,0,.12);
+
+}
+
+/* ==========================
+   PLACEHOLDER
+========================== */
+
+::placeholder{
+    color:#999;
+}
+
+/* ==========================
+   SEARCH FORM
+========================== */
+
+.search-form{
+    position:relative;
+}
+
+.search-form input{
+
+    padding-right:52px;
+
+}
+
+.search-form button{
+
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#f57c00;
+    color:#fff;
+    cursor:pointer;
+
+}
+
+/* ==========================
+   COMMENT FORM
+========================== */
+
+.comment-form{
+
+    margin-top:35px;
+
+}
+
+.comment-form textarea{
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================
+   NEWSLETTER
+========================== */
+
+.newsletter-form{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.newsletter-form input{
+
+    flex:1;
+
+}
+
+.newsletter-form button{
+
+    white-space:nowrap;
+
+}
+
+/* ==========================
+   LOGIN FORM
+========================== */
+
+.login-form{
+
+    max-width:420px;
+    margin:auto;
+    padding:35px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   ERROR
+========================== */
+
+.input-error{
+
+    border-color:#dc2626 !important;
+
+}
+
+.error-text{
+
+    color:#dc2626;
+    font-size:13px;
+    margin-top:6px;
+
+}
+
+/* ==========================
+   SUCCESS
+========================== */
+
+.input-success{
+
+    border-color:#16a34a !important;
+
+}
+
+.success-text{
+
+    color:#16a34a;
+    font-size:13px;
+    margin-top:6px;
+
+}
+
+/* ==========================
+   CHECKBOX
+========================== */
+
+.checkbox-group{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.newsletter-form{
+
+    flex-direction:column;
+
+}
+
+.login-form{
+
+    padding:22px;
+
+}
+
+}
